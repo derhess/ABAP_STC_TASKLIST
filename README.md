@@ -6,8 +6,6 @@ This project provides a **minimal Proof-of-Concept (PoC) HTTP Service API for th
 
 ## Motivation
 
-## Motivation
-
 **Infrastructure as Code (IaC)** is gaining increasing [attention](https://learning.sap.com/courses/getting-started-with-terraform-on-sap-btp) within the SAP ecosystem. While the SAP BTP ecosystem already provides solid IaC capabilities through Terraform providers such as **[SAP BTP](https://registry.terraform.io/providers/SAP/btp/latest/docs)** and **[SAP Cloud Connector](https://registry.terraform.io/providers/SAP/scc/latest)**, the options for automating **on-premise SAP systems** remain more limited. Today, **[Ansible](https://docs.ansible.com/projects/ansible/latest/collections/community/sap_libs/index.html#)** is one of the most established approaches for implementing IaC principles in the on-premise SAP landscape.
 
 At the same time, SAP has deprecated several open-source projects providing direct access to SAP RFC APIs from technologies such as **[Python](https://github.com/SAP-archive/PyRFC?tab=readme-ov-file#deprecation-notice) and [Node.js](https://github.com/SAP-archive/node-rfc) and [GO](https://github.com/SAP-archive/gorfc)**. This creates significant challenges for SAP automation and IaC, as important SAP capabilities can no longer be accessed easily from modern automation frameworks.
@@ -82,6 +80,12 @@ The initial version focuses on:
 - Establishing a foundation for future, more comprehensive coverage of the ABAP Task List API
 
 The implementation is intentionally limited to the **core functionality required for the initial Proof of Concept**. Future versions can extend the API to cover additional Task List API capabilities and more advanced automation scenarios.
+
+### Development
+
+- Checkout the Project with [abapGit](https://abapgit.org/)
+- Configure Environment and Collection Auth of the [Bruno Project](https://www.usebruno.com/) for testing the API 
+
 
 ## References
 
