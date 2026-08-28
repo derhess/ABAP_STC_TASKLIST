@@ -1,3 +1,5 @@
+# Prototype! NOT FOR PRODUCTION!
+
 # OData v2 Service API for STC ABAP Tasklist
 
 This project provides a **minimal Proof-of-Concept (PoC) HTTP Service API for the SAP ABAP Task List API**. It is based on the concepts and functionality of ABAP Task Lists for automated configurations.
