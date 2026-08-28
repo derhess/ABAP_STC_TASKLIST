@@ -1,0 +1,80 @@
+info:
+  name: "Simple :: STC_TM_SESSION_SET_PARAMETERS"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/SessionSet"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "CallerInfo": {
+          "ExtSessionId": "",
+          "Username": "",
+          "Sid": "",
+          "Sysnr": "",
+          "Mandt": "",
+          "Host": ""
+        },
+        "ExecSettings": {
+          "Checkrun": true,
+          "Batch": "t",
+          "Async": true,
+          "Trace": true,
+          "BatchTarget": ""
+        },
+        "ScenarioId": "SAP_BASIS_SYSTEM_CONFIG_CHECK",
+        "TemplateId": "",
+        "InitOnly": true,
+        "IgnoreLanguDiff": true,
+        "IgnoreScenarioDiff": true,
+        "IgnoreScenarioObsolete": true,
+        "Status": "0009",
+        "StatusDescr": "Waiting to be executed",
+        "Finalized": "@",
+        "ExecId": "0.0000000",
+        "SessionId": "SAP_BASIS_SYSTEM_CONFIG_CHECK_20260824075110598",
+        "ToTaskParameter": [
+          {
+            "SessionId": "SessionXYZ",
+            "ScenarioId": "ScenarioXYZ",
+            "TemplateId": "TemplateXyz",
+            "Value": {},
+            "Definition": {}
+          },
+          {
+            "SessionId": "SessionXYZ",
+            "ScenarioId": "ScenarioXYZ",
+            "TemplateId": "TemplateXyz",
+            "Value": {},
+            "Definition": {}
+          },
+          {
+            "SessionId": "SessionXYZ",
+            "ScenarioId": "ScenarioXYZ",
+            "TemplateId": "TemplateXyz",
+            "Value": {},
+            "Definition": {}
+          }
+        ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: req.setHeader("x-csrf-token", bru.getCollectionVar("CSRF-TOKEN"))
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: <span><span>

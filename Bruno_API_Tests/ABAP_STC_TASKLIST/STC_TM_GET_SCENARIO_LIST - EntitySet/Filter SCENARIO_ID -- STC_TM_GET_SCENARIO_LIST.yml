@@ -1,0 +1,20 @@
+info:
+  name: "Filter SCENARIO_ID :: STC_TM_GET_SCENARIO_LIST"
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/ScenarioSet?$filter=ScenarioId eq 'SAP_ESH_RESET'"
+  params:
+    - name: $filter
+      value: ScenarioId eq 'SAP_ESH_RESET'
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,11 @@
+name: DefaulSAPSystem
+variables:
+  - name: protocol
+    value: https
+    description: http or https
+  - name: host
+    value: yoursapsystem.com
+    description: hostname inc. subdomain
+  - name: port
+    value: "8458"
+    description: Network Port

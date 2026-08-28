@@ -1,0 +1,47 @@
+info:
+  name: "SAP_BASIS_SYSTEM_CONFIG_CHECK :: STC_TM_GET_SCENARIO_LIST"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/SessionSet"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "CallerInfo": {
+        },
+        "ExecSettings": {
+        },
+        "ScenarioId": "SAP_BASIS_SYSTEM_CONFIG_CHECK",
+        "TemplateId": "",
+        "InitOnly": true,
+        "IgnoreLanguDiff": true,
+        "IgnoreScenarioDiff": true,
+        "IgnoreScenarioObsolete": true,
+        "Status": "",
+        "StatusDescr": "",
+        "Finalized": "",
+        "ExecId": "0000000.0000000",
+        "SessionId": "",
+        "ToTaskParameter": []
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: req.setHeader("x-csrf-token", bru.getCollectionVar("CSRF-TOKEN"))
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: <br/>

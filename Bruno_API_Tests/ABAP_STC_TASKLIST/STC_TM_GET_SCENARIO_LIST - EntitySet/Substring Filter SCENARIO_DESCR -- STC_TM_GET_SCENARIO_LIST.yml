@@ -1,0 +1,20 @@
+info:
+  name: "Substring Filter SCENARIO_DESCR :: STC_TM_GET_SCENARIO_LIST"
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/ScenarioSet?$filter=substringof('Solution',ScenarioDescr)"
+  params:
+    - name: $filter
+      value: substringof('Solution',ScenarioDescr)
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

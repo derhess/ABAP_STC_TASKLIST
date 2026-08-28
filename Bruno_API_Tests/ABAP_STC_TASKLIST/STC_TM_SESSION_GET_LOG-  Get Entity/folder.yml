@@ -1,0 +1,47 @@
+info:
+  name: STC_TM_SESSION_GET_LOG-  Get Entity
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Data Transfer<span>
+
+    Currently only these parameters are supported:
+
+    ```javascript
+    JSON Object
+    - i_session_id
+    ```
+
+    <span><span>
+
+    ## Called Function
+
+    <br/>
+
+    <span>FUNCTION stc_tm_session_get_log</span>
+
+    <span>  IMPORTING</span>
+
+    <span>    VALUE(i_session_id) TYPE stc_session_id</span>
+
+    <span>    VALUE(i_format) TYPE stc_session_log_format DEFAULT 'XML'</span>
+
+    <span>    VALUE(i_language) TYPE laiso OPTIONAL</span>
+
+    <span>    VALUE(is_caller_info) TYPE stc_ext_caller_info OPTIONAL</span>
+
+    <span>  EXPORTING</span>
+
+    <span>    VALUE(e_log) TYPE xstring</span>
+
+    <span>    VALUE(e_content_type) TYPE w3conttype</span>
+
+    <span>  TABLES</span>
+
+    <span>    et_return TYPE bapirettab OPTIONAL.</span>
+  type: text/markdown

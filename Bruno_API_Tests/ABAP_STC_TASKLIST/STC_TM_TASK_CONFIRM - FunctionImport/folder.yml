@@ -1,0 +1,41 @@
+info:
+  name: STC_TM_TASK_CONFIRM - FunctionImport
+  type: folder
+  seq: 12
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Data Transfer<span>
+
+    Currently only these parameters are supported:
+
+    ```
+    JSON Object
+    - i_session_id
+    - t_taskname
+    - i_lnr
+    ```
+
+    <br/>
+
+    ```scss
+
+    ## Called Function Module 
+
+    FUNCTION stc_tm_task_confirm
+      IMPORTING
+        VALUE(i_session_id) TYPE stc_session_id
+        VALUE(i_taskname) TYPE stc_task_id
+        VALUE(i_lnr) TYPE stc_task_lnr OPTIONAL
+        VALUE(is_caller_info) TYPE stc_ext_caller_info OPTIONAL
+      EXPORTING
+        VALUE(e_confirmed) TYPE sap_bool
+      CHANGING
+        VALUE(c_exec_id) TYPE stc_exec_id OPTIONAL
+      TABLES
+        et_return TYPE bapirettab OPTIONAL.
+    ```
+  type: text/markdown

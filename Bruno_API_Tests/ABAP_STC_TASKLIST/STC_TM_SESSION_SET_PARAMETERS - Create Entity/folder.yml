@@ -1,0 +1,105 @@
+info:
+  name: STC_TM_SESSION_SET_PARAMETERS - Create Entity
+  type: folder
+  seq: 9
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Data Transfer<span>
+
+    Currently only these parameters are supported:
+
+    ```javascript
+    JSON Object
+    - i_session_id
+    - it_parameter
+     
+    SHOULD BE EMPTY ==> "ExecSettings": {}
+    ```
+
+    Example JSON Object for HTTP Body Paylod
+
+    ```json
+    {
+      "CallerInfo": {
+      },
+      "ExecSettings": {
+      },
+      "ScenarioId": "SAP_BASIS_SYSTEM_CONFIG_CHECK",
+      "TemplateId": "",
+      "InitOnly": true,
+      "IgnoreLanguDiff": true,
+      "IgnoreScenarioDiff": true,
+      "IgnoreScenarioObsolete": true,
+      "Status": "0009",
+      "StatusDescr": "Waiting to be executed",
+      "Finalized": "@",
+      "ExecId": "0.0000000",
+      "SessionId": "SAP_BASIS_SYSTEM_CONFIG_CHECK_20260824075110598",
+      "ToTaskParameter": [
+        {
+          "Definition": {
+            "Taskname": "CL_STCT_CHECK_TMS",
+            "Lnr": 1,
+            "Fieldname": "P_OPT2",
+            "Mandatory": false,
+            "Datatype": "CHAR",
+            "Leng": "000001",
+            "Decimals": "000000",
+            "Lowercase": false,
+            "Outputlen": "000001",
+            "Signflag": false,
+            "Convexit": "",
+            "Ddtext": "Error",
+            "Password": false,
+            "ReadOnly": false,
+            "Checkbox": false,
+            "Radiobutton": true,
+            "RbGroup": "ICM",
+            "Defaultval": ""
+          },
+          "Value": {
+            "Taskname": "CL_STCT_CHECK_TMS",
+            "Lnr": 1,
+            "Fieldname": "P_OPT2",
+            "Value": ""
+          },
+          "SessionId": "",
+          "ScenarioId": "SAP_BASIS_SYSTEM_CONFIG_CHECK",
+          "TemplateId": ""
+        }
+      ]
+    }
+    ```
+
+    ## Called Function Module
+
+    <span>FUNCTION stc_tm_session_set_parameters</span>
+
+    <span> IMPORTING</span>
+
+    <span> VALUE(i_session_id) TYPE stc_session_id</span>
+
+    <span> VALUE(i_language) TYPE laiso OPTIONAL</span>
+
+    <span> VALUE(i_ignore_langu_diff) TYPE sap_bool OPTIONAL</span>
+
+    <span> VALUE(i_ignore_scenario_diff) TYPE sap_bool DEFAULT 'X'</span>
+
+    <span> VALUE(it_parameter) TYPE stctm_tx_value</span>
+
+    <span> VALUE(is_caller_info) TYPE stc_ext_caller_info OPTIONAL</span>
+
+    <span> CHANGING</span>
+
+    <span> VALUE(c_exec_id) TYPE stc_exec_id OPTIONAL</span>
+
+    <span> TABLES</span>
+
+    <span> et_return TYPE bapirettab OPTIONAL.</span>
+
+    <br/>
+  type: text/markdown

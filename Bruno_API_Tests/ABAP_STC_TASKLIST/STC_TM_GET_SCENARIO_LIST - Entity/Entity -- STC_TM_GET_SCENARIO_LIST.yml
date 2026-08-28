@@ -1,0 +1,16 @@
+info:
+  name: "Entity :: STC_TM_GET_SCENARIO_LIST"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/ScenarioSet('%2FUI5%2FSCHEDULE_JOB_UPDATE_CACHE')"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

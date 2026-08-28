@@ -1,0 +1,20 @@
+info:
+  name: "Substring Filter BASIC_SCEN_ID :: STC_TM_GET_SCENARIO_LIST copy"
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/ScenarioSet?$filter=substringof('CONFIG',BasicScenId)"
+  params:
+    - name: $filter
+      value: substringof('CONFIG',BasicScenId)
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

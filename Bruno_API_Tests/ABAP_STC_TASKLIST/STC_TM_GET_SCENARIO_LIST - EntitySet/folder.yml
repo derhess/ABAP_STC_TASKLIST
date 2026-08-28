@@ -1,0 +1,61 @@
+info:
+  name: STC_TM_GET_SCENARIO_LIST - EntitySet
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Data Transfer<span>
+
+    Currently only these parameters are supported:
+
+    ```javascript
+    JSON Object
+    - i_scenario_id OPTIONAL
+    - i_scenario_descr OPTIONAL
+    - i_basic_scen_id OPTIONAL
+    ```
+
+    <br/>
+
+    ## Called Function
+
+    <br/>
+
+    <span>FUNCTION stc_tm_get_scenario_list</span>
+
+    <span> IMPORTING</span>
+
+    <span> VALUE(it_scenario_id) TYPE stc_rt_scenario_id OPTIONAL</span>
+
+    <span> VALUE(it_scenario_descr) TYPE stc_rt_scenario_descr OPTIONAL</span>
+
+    <span> VALUE(it_basic_scen_id) TYPE stc_rt_basic_scen_id OPTIONAL</span>
+
+    <span> VALUE(i_ignore_obsolete) TYPE sap_bool DEFAULT 'X'</span>
+
+    <span> VALUE(i_language) TYPE laiso OPTIONAL</span>
+
+    <span> VALUE(i_show) TYPE sap_bool OPTIONAL</span>
+
+    <span> VALUE(i_maxrecords) TYPE int4 OPTIONAL</span>
+
+    <span> VALUE(is_caller_info) TYPE stc_ext_caller_info OPTIONAL</span>
+
+    <span> EXPORTING</span>
+
+    <span> VALUE(e_scenario_id) TYPE stc_scenario_id</span>
+
+    <span> VALUE(e_scenario_descr) TYPE stc_scenario_descr</span>
+
+    <span> TABLES</span>
+
+    <span> et_scenario LIKE stc_s_scenario OPTIONAL</span>
+
+    <span> et_return TYPE bapirettab OPTIONAL.</span></span>
+
+    <br/>
+  type: text/markdown

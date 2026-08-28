@@ -1,0 +1,49 @@
+info:
+  name: STC_TM_TASK_UNSKIP - FunctionImport
+  type: folder
+  seq: 14
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Data Transfer<span>
+
+    Currently only these parameters are supported:
+
+    ```scss
+    JSON Object
+    - i_session_id TYPE stc_session_id
+    - i_taskname TYPE stc_task_id OPTIONAL
+    - i_lnr TYPE stc_task_lnr OPTIONAL
+    - i_unskip_dep_tasks  TYPE sap_bool DEFAULT space
+    - i_exec_failed_again TYPE sap_bool DEFAULT space
+
+    - e_skipped TYPE sap_bool
+    ```
+
+    <br/>
+
+    ```scss
+
+    ## Called Function Module 
+
+    FUNCTION stc_tm_task_unskip
+      IMPORTING
+        VALUE(i_session_id) TYPE stc_session_id
+        VALUE(i_taskname) TYPE stc_task_id OPTIONAL
+        VALUE(i_lnr) TYPE stc_task_lnr OPTIONAL
+        VALUE(i_exec_failed_again) TYPE sap_bool DEFAULT space
+        VALUE(i_unskip_dep_tasks) TYPE sap_bool DEFAULT space
+        VALUE(is_caller_info) TYPE stc_ext_caller_info OPTIONAL
+        VALUE(it_task_id_dtls) TYPE stc_task_details_t OPTIONAL
+      EXPORTING
+        VALUE(e_unskipped) TYPE sap_bool
+        VALUE(et_unskipped) TYPE stc_task_skip_unskip_info_t
+      CHANGING
+        VALUE(c_exec_id) TYPE stc_exec_id OPTIONAL
+      TABLES
+        et_return TYPE bapirettab OPTIONAL.
+    ```
+  type: text/markdown

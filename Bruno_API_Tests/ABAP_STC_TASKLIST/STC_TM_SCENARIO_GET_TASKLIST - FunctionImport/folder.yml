@@ -1,0 +1,44 @@
+info:
+  name: STC_TM_SCENARIO_GET_TASKLIST - FunctionImport
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Data Transfer<span>
+
+    Currently only these parameters are supported:
+
+    ```javascript
+    JSON Object
+    - i_scenario_id
+    - i_template_id
+    ```
+
+    ## Called Function
+
+    <span>`FUNCTION stc_tm_scenario_get_tasklist`</span>
+
+    <span>` IMPORTING`</span>
+
+    <span>` VALUE(i_scenario_id) TYPE stc_scenario_id`</span>
+
+    <span>` VALUE(i_template_id) TYPE stc_template_id OPTIONAL`</span>
+
+    <span>` VALUE(i_language) TYPE laiso OPTIONAL`</span>
+
+    <span>` VALUE(is_caller_info) TYPE stc_ext_caller_info OPTIONAL`</span>
+
+    <span>` EXPORTING`</span>
+
+    <span>` VALUE(et_tasklist) TYPE stctm_t_task`</span>
+
+    <span>` TABLES`</span>
+
+    <span>` et_return TYPE bapirettab OPTIONAL.`</span></span>
+
+    <br/>
+  type: text/markdown

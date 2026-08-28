@@ -1,0 +1,29 @@
+info:
+  name: "Simple :: STC_TM_TASK_SKIP"
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{protocol}}://{{host}}:{{port}}/sap/opu/odata/sap/ZSTC_TM_TASKLIST_SRV/skipTask?SessionId='SAP_BASIS_SYSTEM_CONFIG_CHECK_20260824082907577'&Taskname='CL_STCT_CHECK_KERNEL_RELEASE'&Lnr=1&skipDepTasks=false"
+  params:
+    - name: SessionId
+      value: "'SAP_BASIS_SYSTEM_CONFIG_CHECK_20260824082907577'"
+      type: query
+    - name: Taskname
+      value: "'CL_STCT_CHECK_KERNEL_RELEASE'"
+      type: query
+    - name: Lnr
+      value: "1"
+      type: query
+    - name: skipDepTasks
+      value: "false"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
